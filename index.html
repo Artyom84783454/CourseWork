@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astroconnect - Головна</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Подключение Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Подключение Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Astroconnect</a>
+            </div>
+            <ul id="nav-list" class="nav-menu">
+                <li><a href="services.html">Послуги</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+                <li id="account-link"><a href="login.php">Особистий кабінет</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- контент страницы -->
+        <section class="intro">
+            <div class="intro-div">
+            <h1>Ласкаво просимо до Astroconnect</h1>
+            <p>Ми надаємо найкращі телекомунікаційні послуги для вашого бізнесу та дому.</p>
+        </div>
+        </section>
+        <!-- Карусель -->
+        <section class="image-carousel">
+            <div class="cube-container">
+                <div class="cube">
+                    <div class="cube-face cube-face-front"><img src="images/slide1.jpg" alt="Slide 1"></div>
+                    <div class="cube-face cube-face-right"><img src="images/slide2.jpeg" alt="Slide 2"></div>
+                    <div class="cube-face cube-face-back"><img src="images/slide3.jpg" alt="Slide 3"></div>
+                    <div class="cube-face cube-face-left"><img src="images/slide4.jpg" alt="Slide 4"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Astroconnect. Всі права захищені.</p>
+    </footer>
+    <!-- Подключение Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Инициализация Swiper -->
+    <script>
+        // Инициализация
+let currentAngle = 0;
+const cubeContainer = document.querySelector('.cube-container');
+// Функция для переключения слайда
+function rotateCube(direction) {
+    if (direction === 'next') {
+        currentAngle -= 90; // Поворот влево
+    } else if (direction === 'prev') {
+        currentAngle += 90; // Поворот вправо
+    }
+
+    // Показ 3D куба с отдалением
+    cubeContainer.style.transition = 'transform 1s ease';
+    cubeContainer.style.transform = 'translateZ(-300px) rotateY(' + currentAngle + 'deg)';
+
+    // Возвращение обратно после короткой паузы
+    setTimeout(() => {
+        cubeContainer.style.transition = 'transform 1s ease';
+        cubeContainer.style.transform = 'translateZ(-150px) rotateY(' + currentAngle + 'deg)';
+    }, 1000); // Задержка перед приближением
+}
+
+// Автоматическое переключение слайдов
+setInterval(() => rotateCube('next'), 5000);
+
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        navToggle.addEventListener('click', function () {
+            navMenu.classList.toggle('open');
+        });
+    });</script>
+    <!-- скрипты -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>

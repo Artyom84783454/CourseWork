@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astroconnect - Послуги</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Подключение Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Подключение Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Astroconnect</a>
+            </div>
+            <ul id="nav-list" class="nav-menu">
+                <li><a href="services.html">Послуги</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+                <li id="account-link"><a href="login.php">Особистий кабінет</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="services">
+            <h1>Наші Послуги</h1>
+            <p>Ми пропонуємо широкий спектр телекомунікаційних послуг, включаючи інтернет, телефонію та кабельне телебачення.</p>
+            <div class="service-container">
+                <div class="service-item">
+                    <img src="images/internet.jpg" alt="Швидкісний інтернет">
+                    <div class="item-internet"><h2>Швидкісний інтернет</h2>
+                        <p>
+                            
+Швидкісний Інтернет від Astraconnect - передове та надійне рішення. Висока швидкість передачі даних, стабільність з'єднання. Різні пакети для всіх потреб. Клієнтська підтримка завжди на зв'язку.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <img src="images/phone.jpg" alt="Цифрова телефонія">
+                    <div class="item-phone">
+                    <h2>Цифрова телефонія</h2>
+                    <p>
+                        Цифрова телефонія від Astraconnect - передове рішення для вашого зв'язку. Надійна і якісна передача голосу, широкий функціонал. Різні пакети для всіх потреб. Клієнтська підтримка готова вирішити будь-які питання.</p>
+                </div>
+                </div>
+                <div class="service-item">
+                    <img src="images/tv.jpg" alt="Інтернет телебачення">
+                    <h2>Інтернет телебачення</h2>
+                    <p>Інтернет-телебачення від Astraconnect - передове рішення для вашого дозвілля. Якісний стрімінг відео, доступ до різноманітного контенту. Різні пакети для всіх ваших переваг. Клієнтська підтримка завжди на зв'язку для вирішення будь-яких питань.</p>
+                </div>
+                <div class="service-item">
+                    <img src="images/business.jpg" alt="Корпоративні рішення">
+                    <h2>Корпоративні рішення</h2>
+                    <p>
+                        Корпоративні рішення від Astraconnect - інноваційні та надійні. Забезпечення стабільного і безперебійного зв'язку для вашої компанії. Широкий спектр послуг, що включає інтернет, телефонію та телебачення. Різні пакети для відповідності вашим потребам. Наша команда готова надати індивідуальний підхід та технічну підтримку на високому рівні.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    
+    <footer>
+        <p>&copy; 2024 Astroconnect. Всі права захищені.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            navToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('open');
+            });
+        });</script>
+        <!-- скрипты -->
+        <script src="js/scripts.js"></script>
+</body>
+</html>

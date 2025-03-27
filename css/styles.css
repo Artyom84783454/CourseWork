@@ -1,0 +1,321 @@
+/* Основные стили */
+body {
+    font-family: 'Montserrat', Arial, sans-serif; /* Применение нового шрифта */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #0c122c, #0059ff, #22a089);
+    color: #fff;
+}
+
+/* Стили для header и nav */
+header {
+    background: linear-gradient(90deg, #0c122c, #0059ff, #22a089);
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: #ff7f50;
+}
+
+/* Стили для мобильного меню */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+/* Стили для контента */
+main {
+    padding: 20px;
+}
+
+footer {
+    background: linear-gradient(90deg, #0c122c, #0059ff, #22a089);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.intro, .services, .contact, .login, .dashboard {
+    text-align: center;
+}
+
+/* Стили для карусели */
+.image-carousel {
+    position: absolute; /* Установим абсолютное позиционирование */
+    margin-top: 2%;
+    top: 50%; /* Отцентруем по вертикали */
+    left: 50%; /* Отцентруем по горизонтали */
+    transform: translate(-50%, -50%); /* Переместим элемент в центр */
+    width: 700px;
+    height: 700px;
+    perspective: 2000px; /* Перспектива для 3D */
+}
+
+.cube-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateZ(-300px); /* Начальное отдаление куба */
+    transition: transform 1s ease;
+}
+
+.cube {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.cube-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.cube-face-front {
+    transform: rotateY(0deg) translateZ(300px); /* Передняя сторона */
+}
+
+.cube-face-right {
+    transform: rotateY(90deg) translateZ(300px); /* Правая сторона */
+}
+
+.cube-face-back {
+    transform: rotateY(180deg) translateZ(300px); /* Задняя сторона */
+}
+
+.cube-face-left {
+    transform: rotateY(-90deg) translateZ(300px); /* Левая сторона */
+}
+
+.cube-face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#map {
+    width: 50%;
+    height: 450px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.service-item {
+    background-color: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.service-item img {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.service-item h2 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.service-item p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.item-internet {
+    background-color: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #ffffff;
+}
+
+.item-phone {
+    background-color: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #ffffff;
+}
+
+.intro-div {
+    padding-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Adaptive */
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #333;
+        border-radius: 10px;
+        width: 200px;
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }}
+
+
+@media (max-width: 480px) {
+    .swiper-button-next, .swiper-button-prev {
+        right: -20px;
+        left: -20px;
+    }
+
+    .swiper-pagination {
+        bottom: -10px;
+    }}
+
+@media (max-width: 480px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        right: -20px;
+        left: -20px;
+    }
+
+    .swiper-pagination {
+        bottom: -10px;
+    }
+
+    /* Стили для карусели */
+    .image-carousel {
+        width: 200px;
+        height: 200px;
+        perspective: 1000px; /* Перспектива для 3D */
+    }
+
+    .cube-container {
+        transform: translateZ(-100px); /* Начальное отдаление куба */
+    }
+
+    .cube-face-front {
+        transform: rotateY(0deg) translateZ(100px); /* Передняя сторона */
+    }
+
+    .cube-face-right {
+        transform: rotateY(90deg) translateZ(100px); /* Правая сторона */
+    }
+
+    .cube-face-back {
+        transform: rotateY(180deg) translateZ(100px); /* Задняя сторона */
+    }
+
+    .cube-face-left {
+        transform: rotateY(-90deg) translateZ(100px); /* Левая сторона */
+    }
+
+    .cube-face img {
+        border-radius: 10px;
+    }}
+@media (max-width: 480px){
+#map {
+    width: 50%;
+    height: 175px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}}

@@ -1,0 +1,165 @@
+/* CSS для формы регистрации */
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #0c122c, #0059ff, #22a089);
+}
+
+header {
+    background: linear-gradient(90deg, #0c122c, #0059ff, #22a089);
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: #ff7f50;
+}
+
+/* Стили для мобильного меню */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+.registration-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.registration-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registration-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-container form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.registration-container form input[type="text"],
+.registration-container form input[type="password"],
+.registration-container form input[type="email"],
+.registration-container form input[type="date"],
+.registration-container form select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.registration-container form input[type="submit"] {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.registration-container form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.link a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Adaptive */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #333;
+        border-radius: 10px;
+        width: 200px;
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }}

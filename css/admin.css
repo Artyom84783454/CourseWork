@@ -1,0 +1,121 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, #0c122c, #0059ff, #22a089);
+    color: #333;
+}
+
+/* Styles for form */
+.user-form {
+    max-width: 400px;
+    margin: 20px auto; /* Центрирование формы */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center; /* Центрирование содержимого */
+}
+
+.user-form .form-group {
+    margin-bottom: 15px;
+}
+
+.user-form label {
+    display: block;
+    font-weight: bold;
+}
+
+.user-form input[type="text"],
+.user-form input[type="password"] {
+    width: calc(100% - 16px); /* Уменьшена ширина для компенсации паддингов и рамки */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.user-form button {
+    width: 100%; /* Изменено для занимания всей доступной ширины */
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Styles for search form */
+.search-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center; /* Центрирование содержимого */
+}
+
+.search-form .form-group {
+    margin-bottom: 15px;
+}
+
+.search-form label {
+    display: block;
+    font-weight: bold;
+}
+
+.search-form input[type="text"] {
+    width: calc(100% - 16px); /* Уменьшена ширина для компенсации паддингов и рамки */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.search-form button {
+    width: 100%; /* Изменено для занимания всей доступной ширины */
+    padding: 10px;
+    margin-top: 1%;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Styles for messages */
+.success-msg {
+    color: #28a745;
+    text-align: center;
+}
+
+.error-msg {
+    color: #dc3545;
+    text-align: center;
+}
+.logout-container {
+    text-align: center; /* Центрирование содержимого */
+}
+
+.logout-button {
+    width: 150px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #0056b3;
+}
+.user_prof{
+    text-align: center;
+    color: #333;
+}
+#generate_ip_btn{
+    margin-top: 1%;
+}
