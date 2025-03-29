@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: php_app
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/app
+    depends_on:
+      - localhost
+    environment:
+      - DATABASE_URL=pgsql:host=localhost;port=5432;dbname=astraconnect;user=postgres;password=1607
+
+  localhost:
+    image: postgres:16
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: astraconnect
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1607
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./DB/backup.sql:/docker-entrypoint-initdb.d/backup.sql  # Монтируем бекап
+    entrypoint: ["docker-entrypoint.sh", "postgres"]
+
+volumes:
+  pgdata:
