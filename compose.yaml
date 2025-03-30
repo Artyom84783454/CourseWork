@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: php
+    container_name: ${PROJECT_NAME}_php
     volumes:
       - .:/var/www/html 
     networks:
@@ -14,7 +14,7 @@ services:
     build:
       context: ./Nginx
       dockerfile: Dockerfile
-    container_name: nginx
+    container_name: ${PROJECT_NAME}_nginx
     volumes:
     - .:/var/www/html
     ports:
@@ -28,14 +28,14 @@ services:
     build:
       context: ./DB
       dockerfile: Dockerfile 
-    container_name: db
+    container_name: ${PROJECT_NAME}_db
     restart: always
     environment:
-      POSTGRES_DB: astraconnect
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 1607
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_PASSWORD=${DB_USER_PASSWORD}
     ports:
-      - "5432:5432"
+      - '${POSTGRES_PORT}:5432'
     volumes:
       - db_data:/var/lib/postgresql/data
     entrypoint: ["docker-entrypoint.sh", "postgres"]

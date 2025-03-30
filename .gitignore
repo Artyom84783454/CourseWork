@@ -344,3 +344,5 @@ fabric.properties
 /fuel/app/cache/*/*
 /fuel/app/config/crypt.php
 
+.env
+
