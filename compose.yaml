@@ -29,7 +29,6 @@ services:
       context: ./DB
       dockerfile: Dockerfile 
     container_name: ${PROJECT_NAME}_db
-    restart: always
     environment:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_DB=${DB_NAME}
