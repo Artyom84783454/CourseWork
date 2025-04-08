@@ -14,7 +14,7 @@ services:
   nginx:
     image: ghcr.io/artyom84783454/coursework_nginx:latest
     build:
-      context: ./Nginx
+      context: ./nginx
       dockerfile: Dockerfile
     container_name: ${PROJECT_NAME}_nginx
     volumes:
