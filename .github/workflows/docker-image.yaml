@@ -28,4 +28,4 @@ jobs:
         uses: docker/setup-buildx-action@v3
       - 
         name: Build the Docker image
-        run: docker compose up -d --file compose.yaml --build --tag my-image-name:$(date +%s)
+        run: docker compose up -d --build --tag my-image-name:$(date +%s)
