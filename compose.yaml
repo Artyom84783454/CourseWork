@@ -1,8 +1,8 @@
-version: '3.8'
+version: '3.9'
 
 services:
   php:
-    image: ghcr.io/${GITHUB_REPOSITORY_OWNER}/${PROJECT_NAME}_php:latest
+    image: ghcr.io/artyom84783454/coursework_php:latest
     build:
       context: .
       dockerfile: Dockerfile
@@ -12,7 +12,7 @@ services:
     networks:
       - local_network
   nginx:
-    image: ghcr.io/${GITHUB_REPOSITORY_OWNER}/${PROJECT_NAME}_nginx:latest
+    image: ghcr.io/artyom84783454/coursework_nginx:latest
     build:
       context: ./Nginx
       dockerfile: Dockerfile
@@ -27,7 +27,7 @@ services:
       - local_network
 
   db:
-    image: ghcr.io/${GITHUB_REPOSITORY_OWNER}/${PROJECT_NAME}_db:latest
+    image: ghcr.io/artyom84783454/coursework_db:latest
     build:
       context: ./DB
       dockerfile: Dockerfile 
