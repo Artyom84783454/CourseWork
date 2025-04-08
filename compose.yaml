@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ${PROJECT_NAME}_php
+    volumes:
+      - .:/var/www/html 
+    networks:
+      - local_network
+  nginx:
+    build:
+      context: ./Nginx
+      dockerfile: Dockerfile
+    container_name: ${PROJECT_NAME}_nginx
+    volumes:
+    - .:/var/www/html
+    ports:
+      - "81:80"
+    depends_on:
+      - php
+    networks:
+      - local_network
+
+  db:
+    build:
+      context: ./DB
+      dockerfile: Dockerfile 
+    container_name: ${PROJECT_NAME}_db
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_PASSWORD=${DB_USER_PASSWORD}
+    ports:
+      - '${POSTGRES_PORT}:5432'
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    entrypoint: ["docker-entrypoint.sh", "postgres"]
+    networks:
+      - local_network
+      
+networks:
+  local_network:
+    driver: bridge
+
+volumes:
+  db_data:
