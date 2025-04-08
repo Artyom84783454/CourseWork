@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   php:
+    image: ghcr.io/${GITHUB_REPOSITORY_OWNER}/${PROJECT_NAME}_php:latest
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,6 +12,7 @@ services:
     networks:
       - local_network
   nginx:
+    image: ghcr.io/${GITHUB_REPOSITORY_OWNER}/${PROJECT_NAME}_nginx:latest
     build:
       context: ./Nginx
       dockerfile: Dockerfile
@@ -25,6 +27,7 @@ services:
       - local_network
 
   db:
+    image: ghcr.io/${GITHUB_REPOSITORY_OWNER}/${PROJECT_NAME}_db:latest
     build:
       context: ./DB
       dockerfile: Dockerfile 
@@ -34,7 +37,7 @@ services:
       - POSTGRES_DB=${DB_NAME}
       - POSTGRES_PASSWORD=${DB_USER_PASSWORD}
     ports:
-      - '${POSTGRES_PORT}:5432'
+      - '5432:5432'
     volumes:
       - db_data:/var/lib/postgresql/data
     entrypoint: ["docker-entrypoint.sh", "postgres"]
